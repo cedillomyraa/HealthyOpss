@@ -1,0 +1,100 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %} 
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="h1 fw-bold">Make it your own with HealthyOps</h1>
+                <p class="lead text-muted">Our delicious meal plans are designed by dietitians and food experts to help you lose weight, eat more fiber, go vegan and more. Browse dozens of meal plans to find one that's right for you.</p>
+                <p>
+                <a href="#" class="btn btn-success my-2">Create an account</a>
+                </p>
+                <p>
+                    Scroll down to view our meal options.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-3">
+            <div class="p-2 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-3">
+                    <h1 class="display-5 fw-bold">About HealthyOps</h1>
+                    <p class="fs-6">Eat clean, lose body fat and love the food you're
+                        eating. Feel great in your own body.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-4">
+        <div class="container px-lg-5">
+            <!-- Page Features-->
+            
+            <div class="row gx-lg-5">
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3  pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                            <h2 class="fs-4 fw-bold"> HealthOps for my diet?</h2>
+                            <p class="mb-0">We can help with that. Low carb? Vegan? Keto? We have options for everyone, and you can easily preview next week’s menu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                            <h2 class="fs-4 fw-bold">Will I be locked in a contract?</h2>
+                            <p class="mb-0">Never. You can easily skip a week, pause, or cancel your account at any time in your account settings. Just make sure you do so before your weekly cutoff to stop your next order.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
+                            <h2 class="fs-4 fw-bold">Whats in the kitchen?</h2>
+                            <p class="mb-0">Each recipe we offer includes FDA nutrition information. You can view nutrition information and ingredients for each recipe in the “product Discription” section before you’ve checked out.We update our menu weekly!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="pb-3 h5">Healthy Options</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                {% for product in products %}
+
+                <div class="col">
+                <div class="card shadow-sm">
+                    <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+                    <div class="card-body">
+                    <p class="card-text">
+                        <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+
+{% endblock %}
