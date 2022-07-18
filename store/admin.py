@@ -9,9 +9,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'slug', 'price', 'lowCarb', 'keto', 'vegan', 'created', 'updated']
-    list_filter = ['lowCarb', 'keto', 'vegan']
-    list_editable = ['price']
+    list_display = ['title', 'author', 'slug', 'price','in_stock', 'lowCarb', 'keto', 'vegan', 'created', 'updated']
+    list_filter = ['lowCarb', 'keto', 'vegan', 'is_active', 'in_stock']
+    list_editable = ['price', 'in_stock']
     prepopulated_fields = {'slug':('title',)}
 
 
