@@ -1,6 +1,6 @@
 
+from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User 
 from django.urls import reverse #allows us to build a url
 #The following is our tables that will be used in the database
 class ProductManager(models.Manager):
@@ -22,11 +22,11 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_creator') #who is this product creator record
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='product_creator') #who is this product creator record
     title = models.CharField(max_length=255) # title for product
     author = models.CharField(max_length=255, default='admin') #category of sproduct
     description= models.TextField(blank=True) #discription of the product
-    image = models.ImageField(upload_to='images/') #upload img and allow us to upload 
+    image = models.ImageField(upload_to='images/', default = 'images/default.png') #upload img and allow us to upload 
     slug = models.SlugField(max_length=255, unique=True) #
     price = models.DecimalField(max_digits=4, decimal_places=2)
     vegan = models.BooleanField(default=True)
