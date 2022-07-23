@@ -12,6 +12,7 @@
 }
 .dropdown-toggle::after {
     display: none;
+    color: green;
 }
 .dropdown-menu{
     top:58px;
@@ -20,7 +21,7 @@
 }
 
 .alert-primary{
-    background-color: #E4F1FF;
+    background-color: #38c763;
 }
 
 
@@ -48,10 +49,7 @@ html, body, p, div{
 /* Navigation-Main*/
 
 /* xs */
-.logo {
-    width: 49px;
-    height: auto;
-}
+
 /* sm */
 @media (min-width: 768px) {
     .logo {

@@ -19,17 +19,19 @@
 
 <body>
     <header class="pb-3">
-        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom p-0">
+            <img class="logo" src="{% static 'images/healthyops_logo.png' %}" alt="complete logo"> 
             <div class="container-fluid px-md-4">
                 <div class="d-flex w-100 navbar-collapse">
-                    <a class="nav-link dropdown-toggle d-none d-md-block fw500" href="/">Home                      
+                    <a class="nav-link dropdown-toggle d-none d-md-block fw500 text-success font-weight-bold" href="/">Home                      
                             <path
                                 d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                         </svg>
                     </a>
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-none d-md-block fw500" href="#" id="navbarDropdown"
+                            <a class="nav-link dropdown-toggle d-none d-md-block fw500 text-success font-weight-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Category
                                 <i class="ps-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -149,10 +151,11 @@
 
     <footer class="container py-5 footer">
         <hr>
+        <img class="logo" src="{% static 'images/healthyops_logo.png' %}" alt="complete logo"> 
         <div class="row pt-4">
             <div class="col-12 col-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-asterisk" viewBox="0 0 16 16">
+                    class="" viewBox="0 0 16 16">
                     <path
                         d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                 </svg>
@@ -161,10 +164,10 @@
             <div class="col-6 col-md fs15">
                 <h5>Follow us on</h5>
                 <ul class="list-unstyled">
-                    <li><a class="link-success text-decoration-none" href="#">Facebook</a></li>
-                    <li><a class="link-success text-decoration-none" href="#">Instagram</a></li>
-                    <li><a class="link-success text-decoration-none" href="#">Twitter</a></li>
-                    <li><a class="link-success text-decoration-none" href="#">Tok-Tok</a></li>
+                    <li><a class="link-success text-decoration-none" href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a class="link-success text-decoration-none" href="https://www.instagram.com/accounts/login/">Instagram</a></li>
+                    <li><a class="link-success text-decoration-none" href="https://twitter.com/i/flow/login">Twitter</a></li>
+                    <li><a class="link-success text-decoration-none" href="https://www.tiktok.com/login">Tok-Tok</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md fs15">
