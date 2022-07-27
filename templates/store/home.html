@@ -1,0 +1,100 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Healthy Ops{% endblock %}
+{% block content %}
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="h1 fw-bold">Make it your own with HealthyOps</h1>
+                <p class="lead text-muted">Our delicious meal plans are designed by dietitians and food experts to help you lose weight, eat more fiber, go vegan and more. Browse dozens of meal plans to find one that's right for you.</p>
+                <p>
+                    Scroll down to view our meal options.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-3">
+            <div class="p-2 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-3">
+                    <h1 class="display-5 fw-bold">About HealthyOps</h1>
+                    <p class="fs-6">Eat clean, lose body fat and love the food you're
+                        eating. Feel great in your own body.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-4">
+        <div class="container px-lg-5">
+            <!-- Page Features-->
+            
+            <div class="row gx-lg-5">
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3  pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                            <h2 class="fs-4 fw-bold"> HealthOps for my diet?</h2>
+                            <p class="mb-0">We can help with that. Low carb? Vegan? Keto? We have options for everyone, and you can easily preview next week’s menu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                            <h2 class="fs-4 fw-bold">Will I be locked in a contract?</h2>
+                            <p class="mb-0">Never. You can easily skip a week, pause, or cancel your account at any time in your account settings. Just make sure you do so before your weekly cutoff to stop your next order.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-3 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
+                            <h2 class="fs-4 fw-bold">Whats in the kitchen?</h2>
+                            <p class="mb-0">Each recipe we offer includes FDA nutrition information. You can view nutrition information and ingredients for each recipe in the “product Discription” section before you’ve checked out.We update our menu weekly!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="alert alert-primary fw600 rounded-0 border-0 py-3" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-info-circle me-2"
+                viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+            FOOD ALLERGY WARNING! Please read discription before purchasing this product.
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="album py-5">
+                    <div class="pb-3">
+                        <h1 class="display-5 fw-bold text-center">Healty Options</h1>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {% for product in products %}
+                        <div class="col">
+                            <div class="card border-0">
+                                <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+                                <div class="card-body px-0">
+                                    <p class="card-text">
+                                        <a class="text-dark text-decoration-none"
+                                            href="{{ product.get_absolute_url }}">{{ product.title|slice:":50" }}...</a>
+                                    </p>
+                                    <div class="fw-bold">${{product.price}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}
