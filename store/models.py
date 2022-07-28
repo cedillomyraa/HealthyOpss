@@ -1,6 +1,7 @@
 
 from django.conf import settings
 from django.db import models
+User = settings.AUTH_USER_MODEL
 from django.urls import reverse #allows us to build a url
 #The following is our tables that will be used in the database
 class ProductManager(models.Manager):
@@ -50,3 +51,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title # thunderer method
+
+
+class Review(models.Model):
+    user = models.ForeignKey(User, models.CASCADE)
+    product = models.ForeignKey(Product, models.CASCADE)
+    subject = models.CharField(max_length=100, blank=True)
+    review = models.TextField(max_length=3000, blank=True)
+    rate = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.id) 

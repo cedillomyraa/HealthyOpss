@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Category, Product
+from .models import Category, Product, Review
 
 
 def product_all(request):
@@ -16,6 +16,20 @@ def category_list(request, category_slug=None):
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, in_stock=True)
+    reviews = Review.objects.filter(product=product).order_by('-id')
     print (slug)
     return render(request, 'store/products/single.html', {'product': product})
 
+def Rate(request, slug):
+    if request.method == "POST":
+        slug = request.GET.get('slug')
+        product = get_object_or_404(Product, slug=slug, in_stock=True)
+        subject = request.GET.get('subject')
+        review = request.GET.get('review')
+        rate = request.GET.get('rate')
+        user = request.user
+        Review(user=user, product=product, subject=subject, review=review, rate=rate).save()
+        return render(request, 'store/products/single.html', {'user': user,
+            'subject': subject,
+            'review': review,
+            'rate': rate}) 

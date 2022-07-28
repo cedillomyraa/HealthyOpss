@@ -135,6 +135,12 @@ BASKET_SESSION_ID = 'basket'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+# Stripe Payment
+# os.environ.setdefault('STRIPE_PUBLISHABLE_KEY', 'pk_test_51LNTTRI7A73tzYN1SMpvqCUd7u22tod7hry6MwsqbcELlo2FpskCO5eMuwWxsHKDFfNAxjQLQAk9J84rFN0x61SU001c1SdN8x')
+# STRIPE_SECRET_KEY = 'sk_test_51LNTTRI7A73tzYN1IaTpkctWzv7lnFPYfhMn9BDlkdAtEE22kJujusbErgv3SHorSggjcZXQJQzt7xIywRAl5f4N00Cf4lbs6R'
+# STRIPE_ENDPOINT_SECRET = ''
+# stripe listen --forward-to localhost:8000/payment/webhook/
+
 # Custom user model
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
